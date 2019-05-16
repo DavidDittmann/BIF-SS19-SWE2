@@ -1,0 +1,3 @@
+download derby 10.15.1.3 am laptop -> in java ordner
+
+design fertig machen.
