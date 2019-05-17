@@ -5,7 +5,7 @@ package DataModels;
 import java.time.LocalDateTime;
 
 public class ExifData {
-    private int _id;
+    private long _id;
     private LocalDateTime _dateTime;
     private double _focalLength;
     private double _exposureTime;
@@ -18,7 +18,7 @@ public class ExifData {
         _dazzleNumber = dazzleNumber;
     }
 
-    public ExifData(int id, LocalDateTime dateTime, double focalLength, double exposureTime, double dazzleNumber){
+    public ExifData(long id, LocalDateTime dateTime, double focalLength, double exposureTime, double dazzleNumber){
         _id = id;
         _dateTime = dateTime;
         _focalLength = focalLength;
@@ -26,11 +26,11 @@ public class ExifData {
         _dazzleNumber = dazzleNumber;
     }
 
-    public int get_id() {
+    public long get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(long _id) {
         this._id = _id;
     }
 

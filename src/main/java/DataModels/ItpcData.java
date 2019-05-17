@@ -5,7 +5,7 @@ package DataModels;
 import java.util.List;
 
 public class ItpcData {
-    private int _id;
+    private long _id;
     private String _pictureName;
     private String _pictureExt;
     private String _keywords;
@@ -15,18 +15,18 @@ public class ItpcData {
         _pictureExt = pictureExtension;
         _keywords = keywords;
     }
-    public ItpcData(int id, String pictureName, String pictureExtension, String keywords){
+    public ItpcData(long id, String pictureName, String pictureExtension, String keywords){
         _id = id;
         _pictureName = pictureName;
         _pictureExt = pictureExtension;
         _keywords = keywords;
     }
 
-    public int get_id() {
+    public long get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(long _id) {
         this._id = _id;
     }
 
