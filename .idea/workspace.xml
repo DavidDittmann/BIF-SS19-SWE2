@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Layers/PreparedStatements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataModels/AuthorData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataModels/P_Model_Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataModels/P_Model_Picture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/AuthorManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AuthorManager.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BIF-SS19-SWE2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BIF-SS19-SWE2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/log/log.ctrl" afterDir="false" />
@@ -38,6 +42,14 @@
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c41.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c411.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c421.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c490.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4c1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c501.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c51.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c60.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c71.dat" afterDir="false" />
@@ -47,24 +59,25 @@
       <change beforePath="$PROJECT_DIR$/mydb/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/cb1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/cf0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/ExifData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataModels/ExifData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/ExifData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataModels/PictureData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataModels/PictureData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Layers/PreparedStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/PreparedStatements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/ExifData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataModels/ExifData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/ItpcData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataModels/ItpcData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/PhotographerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataModels/PhotographerData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/ExifData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/ItpcData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataModels/PhotographerData.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DataModels/PictureData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataModels/PictureData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer_Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Layers/PreparedStatements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/PreparedStatements.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -122,6 +135,35 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="227">
+                    <caret line="20" column="95" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/target/classes/AuthorManager.fxml">
+                <provider editor-type-id="JavaFX-Scene-Builder" />
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="221">
+                    <caret line="13" column="116" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="116" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
@@ -130,10 +172,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,15 +186,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+            <state relative-caret-position="329">
+              <caret line="358" column="17" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#doesTableExist#0;class#DataAccessLayer#0" />
-                <element signature="e#18351#18352#0" expanded="true" />
-                <element signature="e#18666#18667#0" expanded="true" />
+                <element signature="method#getAllPictures#0;class#DataAccessLayer#0" />
+                <element signature="method#getAllPicturesParallel#0;class#DataAccessLayer#0" />
+                <element signature="method#getPicturePathSet#0;class#DataAccessLayer#0" />
                 <element signature="method#getGenKeys#0;class#DataAccessLayer#0" />
                 <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
+                <element signature="method#listFilesInFolder#0;class#DataAccessLayer#0" />
+                <element signature="method#closeConnection#0;class#DataAccessLayer#0" />
+                <element signature="method#convertToEntityAttribute#0;class#DataAccessLayer#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="80" column="55" lean-forward="true" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,30 +231,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+            <state relative-caret-position="380">
+              <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3245#3246#0" expanded="true" />
+                <element signature="e#3289#3290#0" expanded="true" />
+                <element signature="e#8325#8326#0" expanded="true" />
+                <element signature="e#8387#8388#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/main.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/12/javafx-fxml-12-win.jar!/javafx/fxml/FXMLLoader.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+            <state relative-caret-position="184">
+              <caret line="1203" selection-start-line="1203" selection-end-line="1203" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Layers/BusinessLayer_Interface.java">
+        <entry file="file://$PROJECT_DIR$/target/classes/main.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="3" selection-end-line="4" />
+            <state relative-caret-position="222">
+              <caret line="50" column="48" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -192,15 +267,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>editPicturePath</find>
+      <find>FilePathURI</find>
+      <find>FileUtil</find>
+      <find>isValidPicture</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -219,16 +297,26 @@
         <option value="$PROJECT_DIR$/src/main/java/Layers/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/Layers/BusinessLayer_Interface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DataModels/PictureData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/DataModels/ExifData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java" />
         <option value="$PROJECT_DIR$/src/main/java/Layers/PreparedStatements.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/PictureData.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/AuthorManager.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/AuthorManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/P_Model_Picture.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/AuthorData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataModels/P_Model_Author.java" />
+        <option value="$PROJECT_DIR$/target/classes/AuthorManager.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/main/AuthorManager.java" />
+        <option value="$PROJECT_DIR$/target/classes/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/main/Controller.java" />
       </list>
     </option>
@@ -258,8 +346,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,9 +398,13 @@
             <path>
               <item name="BIF-SS19-SWE2" type="b2602c69:ProjectViewProjectNode" />
               <item name="BIF-SS19-SWE2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIF-SS19-SWE2" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BIF-SS19-SWE2" type="b2602c69:ProjectViewProjectNode" />
@@ -324,6 +414,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,9 +429,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558132163741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559495512032" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/db-derby-10.15.1.3-bin/lib" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/SWE2-Java-Exam" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -451,11 +544,18 @@
       <workItem from="1557994628577" duration="8513000" />
       <workItem from="1558031098816" duration="8060000" />
       <workItem from="1558108959319" duration="23182000" />
+      <workItem from="1558367192036" duration="1025000" />
+      <workItem from="1559068733170" duration="2412000" />
+      <workItem from="1559246404902" duration="463000" />
+      <workItem from="1559252004969" duration="6073000" />
+      <workItem from="1559326346339" duration="599000" />
+      <workItem from="1559375881978" duration="28047000" />
+      <workItem from="1559473700356" duration="18011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47633000" />
+    <option name="totallyTimeSpent" value="104263000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,8 +568,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20042644" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -479,7 +580,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29075804" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997923" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32917964" />
@@ -513,181 +614,159 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Controller.java</url>
+          <line>140</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="picNameTF_ID.textProperty()" language="JAVA" />
+        <watch expression="scrollEvent.getDeltaY()" />
+        <watch expression="authorCB" language="JAVA" />
+        <watch expression="MainPicture" />
+        <watch expression="Pictures" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>authorCB</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>picNameTF_ID.textProperty()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>galleryBP</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gallerySP</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sp_anker</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>MainPicture</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$USER_HOME$/Documents/BIF-SWE2-Exam_18/BIF-SWE2/MemoryStore.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/BIF-SWE2-Exam_18/BIF-SWE2/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="12" column="64" lean-forward="true" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_code/Main/Main.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765" />
-      </provider>
+    <entry file="file://$USER_HOME$/Documents/BIF-SWE2-Exam_18/BIF-SWE2/Exercise3Impl.cs">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.1.3/derby-10.15.1.3.jar!/META-INF/MANIFEST.MF">
+    <entry file="file://$USER_HOME$/Documents/BIF-SWE2-Exam_18/BIF-SWE2/FileStore.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.1.3/derby-10.15.1.3.jar!/META-INF/NOTICE">
+    <entry file="file://$USER_HOME$/Documents/BIF-SWE2-Exam_18/BIF-SWE2/StoreFactory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2397">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="289">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.1.3/derby-10.15.1.3.jar!/org/apache/derby/modules.properties">
+    <entry file="file://$USER_HOME$/Documents/Beispielpruefung/SWE2-Java-Exam/src/BIF/SWE2/exam/Exercise2Impl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Beispielpruefung/SWE2-Java-Exam/src/BIF/SWE2/exam/Exercise4Impl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Beispielpruefung/SWE2-Java-Exam/src/BIF/SWE2/exam/Exercise5Impl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Beispielpruefung/SWE2-Java-Exam/src/BIF/SWE2/exam/Exercise1Impl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="66" lean-forward="true" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+        <state relative-caret-position="255">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.1.3/derby-10.15.1.3.jar!/module-info.class">
+    <entry file="file://$USER_HOME$/Documents/Beispielpruefung/SWE2-Java-Exam/src/BIF/SWE2/exam/Exercise3Impl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#4767#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.1.3/derby-10.15.1.3.jar!/org/apache/derby/security/DatabasePermission.class">
+    <entry file="jar://C:/Program Files/Java/db-derby-10.15.1.3-bin/lib/derby.jar!/org/apache/derby/impl/jdbc/SQLExceptionFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1547">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#7822#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/ConnectionPool.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/ConnectionPool_Interface.java" />
-    <entry file="file://$USER_HOME$/Downloads/EXIFModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/IPTCModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/PictureData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/BusinessLayer_Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="219">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Layers/PreparedStatements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="52" column="95" lean-forward="true" selection-start-line="52" selection-start-column="95" selection-end-line="52" selection-end-column="95" />
+        <state relative-caret-position="-190">
+          <caret line="15" column="78" lean-forward="true" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/ExifData.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Layers/BusinessLayer_Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="3" selection-end-line="4" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/value/WritableObjectValue.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/12/javafx-controls-12-win.jar!/javafx/scene/control/ChoiceBox.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="219" selection-start-line="219" selection-end-line="219" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doesTableExist#0;class#DataAccessLayer#0" />
-            <element signature="e#18351#18352#0" expanded="true" />
-            <element signature="e#18666#18667#0" expanded="true" />
-            <element signature="method#getGenKeys#0;class#DataAccessLayer#0" />
-            <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
+            <element signature="e#8218#8219#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -695,17 +774,326 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/main.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+        <state relative-caret-position="612">
+          <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/AuthorManager.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/12/javafx-graphics-12-win.jar!/com/sun/javafx/tk/quantum/GlassViewEventHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="155" column="43" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/PictureData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/P_Model_Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="32" column="66" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1908#1909#0" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2000#2001#0" expanded="true" />
+            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer_Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/value/ChangeListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/P_Model_Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/AuthorData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/12/javafx-controls-12-win.jar!/javafx/scene/control/ComboBoxBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+          <folding>
+            <element signature="e#4696#4697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/ReadOnlyObjectPropertyBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#1058#1059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/ReadOnlyObjectWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/ObjectPropertyBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#1433#1434#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/ReadOnlyIntegerPropertyBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#1070#1071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/ReadOnlyIntegerWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/beans/property/IntegerPropertyBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/12/javafx-controls-12-win.jar!/javafx/scene/control/SelectionModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/12/javafx-controls-12-win.jar!/javafx/scene/control/ComboBox.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+          <folding>
+            <element signature="e#0#14658#0" expanded="true" />
+            <element signature="e#3477#3808#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#9184#11709#0" expanded="true" />
+            <element signature="e#11708#11709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/collections/WeakListChangeListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/collections/ListChangeBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="548" selection-start-line="548" selection-end-line="548" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/collections/ObservableListBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#1649#1650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/AuthorManager.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="116" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="20" column="95" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="50" column="48" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/12/javafx-base-12-win.jar!/javafx/event/Event.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/12/javafx-graphics-12-win.jar!/javafx/scene/Scene.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="3629" selection-start-line="3629" selection-end-line="3629" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/12/javafx-fxml-12-win.jar!/javafx/fxml/FXMLLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="1203" selection-start-line="1203" selection-end-line="1203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="80" column="55" lean-forward="true" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="358" column="17" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#doesTableExist#0;class#DataAccessLayer#0" />
+            <element signature="method#getAllPictures#0;class#DataAccessLayer#0" />
+            <element signature="method#getAllPicturesParallel#0;class#DataAccessLayer#0" />
+            <element signature="method#getPicturePathSet#0;class#DataAccessLayer#0" />
+            <element signature="method#getGenKeys#0;class#DataAccessLayer#0" />
+            <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
+            <element signature="method#listFilesInFolder#0;class#DataAccessLayer#0" />
+            <element signature="method#closeConnection#0;class#DataAccessLayer#0" />
+            <element signature="method#convertToEntityAttribute#0;class#DataAccessLayer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="380">
+          <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3245#3246#0" expanded="true" />
+            <element signature="e#3289#3290#0" expanded="true" />
+            <element signature="e#8325#8326#0" expanded="true" />
+            <element signature="e#8387#8388#0" expanded="true" />
           </folding>
         </state>
       </provider>

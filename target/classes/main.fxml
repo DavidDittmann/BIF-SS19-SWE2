@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="549.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
@@ -26,13 +27,13 @@
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
-                              <MenuItem mnemonicParsing="false" text="Save" />
                           <MenuItem mnemonicParsing="false" text="Close" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Edit">
                         <items>
                           <MenuItem mnemonicParsing="false" text="Delete" />
+                              <MenuItem fx:id="authorManager" mnemonicParsing="false" text="Manage Authors" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Help">
@@ -40,9 +41,14 @@
                           <MenuItem mnemonicParsing="false" text="About" />
                         </items>
                       </Menu>
+                      <Menu mnemonicParsing="false" text="Reload">
+                        <items>
+                          <MenuItem fx:id="reloadBtn" mnemonicParsing="false" text="Reload" />
+                        </items>
+                      </Menu>
                     </menus>
                   </MenuBar>
-                  <TextField layoutX="21.0" layoutY="27.0" prefHeight="25.0" prefWidth="547.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextField fx:id="searchBar_ID" layoutX="21.0" layoutY="27.0" prefHeight="25.0" prefWidth="547.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="242.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
@@ -56,7 +62,9 @@
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
                                           <BorderPane fx:id="picPane_ID" layoutX="81.0" layoutY="24.0" prefHeight="248.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                          </BorderPane>
+                                             <center>
+                                                <ImageView fx:id="mainPicture_ID" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                                             </center></BorderPane>
                                        </children></AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
@@ -71,13 +79,16 @@
                                                                   <VBox layoutX="41.0" prefHeight="219.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
                                                                         <Label text="Bildname" />
-                                                                        <TextField fx:id="picNameTF_ID" />
+                                                                        <TextField fx:id="picNameTF_ID" editable="false" />
                                                                         <Label text="Fileformat" />
                                                                         <TextField fx:id="picFormatTF_ID" editable="false" />
                                                                         <Label text="Fotograf" />
                                                                         <ChoiceBox fx:id="photographerCB_ID" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="166.0" VBox.vgrow="ALWAYS" />
                                                                         <Label text="Keywords" />
-                                                                        <TextArea fx:id="keywordsTA_ID" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" />
+                                                                        <TextArea fx:id="keywordsTA_ID" prefHeight="85.0" prefWidth="176.0" />
+                                                                        <Label layoutX="10.0" layoutY="136.0" text="Description" />
+                                                                        <TextArea fx:id="descriptionTA_ID" layoutX="10.0" layoutY="153.0" prefHeight="85.0" prefWidth="176.0" />
+                                                                        <Button fx:id="mainSaveBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#mainSaveBtnClicked" text="Speichern" VBox.vgrow="ALWAYS" />
                                                                      </children>
                                                                   </VBox>
                                                                </children>
@@ -92,6 +103,8 @@
                                                                      <children>
                                                                         <Label text="Datum / Uhrzeit" />
                                                                         <TextField fx:id="dateTimeTF_ID" editable="false" />
+                                                                        <Label layoutX="10.0" layoutY="10.0" text="Ort" />
+                                                                        <TextField fx:id="locationTF_ID" layoutX="10.0" layoutY="27.0" />
                                                                         <Label text="Brennweite" />
                                                                         <TextField fx:id="focalLengthTF_ID" editable="false" />
                                                                         <Label text="Belichtungszeit" />
@@ -113,15 +126,11 @@
                               </SplitPane>
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane fx:id="sp_anker" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="115.0" layoutY="-46.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <ScrollPane fx:id="galleryScrollPane" layoutX="100.0" layoutY="-48.0" prefHeight="121.0" prefWidth="726.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <HBox fx:id="galleryBox_ID" prefHeight="75.0" prefWidth="583.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
                                 </content>
                               </ScrollPane>
                            </children></AnchorPane>

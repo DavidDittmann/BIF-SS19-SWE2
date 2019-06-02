@@ -6,12 +6,16 @@ package Layers;
 //TODO: IMPLEMENT SEARCH
 
 import DataModels.*;
+import Misc.PrepStatements;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.sql.*;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DataAccessLayer implements DataAccessLayer_Interface{
     public DataAccessLayer() {
@@ -19,17 +23,15 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
 
     @Override
     public void generateDatabase() {
-        if(!doesTableExist("PHOTOGRAPHERS")){
-            createTable(PreparedStatements.createTablePhotographers);
-        }
-        if(!doesTableExist("EXIF")){
-            createTable(PreparedStatements.createTableExif);
-        }
-        if(!doesTableExist("ITPC")){
-            createTable(PreparedStatements.createTableItpc);
+        if(!doesTableExist("AUTHORS")){
+            createTable(PrepStatements.CREATE_TABLE_AUTHORS);
+            LocalDate n = LocalDate.now();
+            createAuthor(new AuthorData("Max","Mustermann",n,"danke"));
+            createAuthor(new AuthorData("Roman","Freud",n,"deine"));
+            createAuthor(new AuthorData("Susanne","Jahn",n,"auch"));
         }
         if(!doesTableExist("PICTURES")){
-            createTable(PreparedStatements.createTablePictures);
+            createTable(PrepStatements.CREATE_TABLE_PICTURES);
         }
     }
 
@@ -93,128 +95,28 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
 
         for(File f : filelist){
             if(!picturePathSet.contains(f.getAbsolutePath())){
-                createPictureEntry(f.getAbsolutePath());
+                createPicture(f.getAbsolutePath());
             }
         }
     }
 
     @Override
-    public PhotographerData getPhotographerData(long id) {
-        PhotographerData ph = null;
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        ResultSet rs=null;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectPhotographerByID);
-            prepStmt.setLong(1,id);
-            rs = prepStmt.executeQuery();
-
-            while(rs.next()){
-                ph = new PhotographerData(rs.getLong("ID"),rs.getString("NAME"),rs.getString("LASTNAME"),rs.getString("ADDRESS"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(rs,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return ph;
-    }
-
-    @Override
-    public ExifData getExifData(long id) {
-        ExifData exif=null;
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        ResultSet rs=null;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectEXIFByID);
-            prepStmt.setLong(1,id);
-            rs = prepStmt.executeQuery();
-
-            while(rs.next()){
-                exif = new ExifData(rs.getLong("ID"),rs.getTimestamp("DATETIME").toLocalDateTime(),rs.getLong("FOCAL_LENGTH"),rs.getLong("EXPOSURE_TIME"),rs.getLong("DAZZLE_TIME"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(rs,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return exif;
-    }
-
-    @Override
-    public ItpcData getItpcData(long id) {
-        ItpcData itpc = null;
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        ResultSet rs=null;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectITPCByID);
-            prepStmt.setLong(1,id);
-            rs = prepStmt.executeQuery();
-
-            while(rs.next()){
-                itpc = new ItpcData(rs.getLong("ID"),rs.getString("PICTURE_NAME"),rs.getString("PICTURE_EXT"),rs.getString("KEYWORDS"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(rs,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return itpc;
-    }
-
-    @Override
-    public long createPictureEntry(String photoFilePath) {
-        String pictureName = FilenameUtils.getBaseName(photoFilePath);
-        String pictureExt = FilenameUtils.getExtension(photoFilePath);
-
-        PhotographerData ph = new PhotographerData("Anton","Braumeister","Beispielloserweg 7");
-        ExifData exif = new ExifData(LocalDateTime.now(),generateRandomDouble(0,30),generateRandomDouble(0,30),generateRandomDouble(0,30));
-        ItpcData itpc = new ItpcData(pictureName,pictureExt,null);
-
-        long ph_id = createPhotographer(ph);
-        long exif_id = createExifData(exif);
-        long itpc_id = createItpcData(itpc);
-
-        if(ph_id == -1 || exif_id == -1 || itpc_id == -1)
-            return -1;
-
-        PictureData pic = new PictureData(photoFilePath, ph_id, exif_id, itpc_id);
+    public long createPicture(String filePath) {
         Connection conn=null;
         PreparedStatement prepStmt=null;
         long ret=0;
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepInsertPicture,Statement.RETURN_GENERATED_KEYS);
-            prepStmt.setString(1, photoFilePath);
-            prepStmt.setLong(2,ph_id);
-            prepStmt.setLong(3,exif_id);
-            prepStmt.setLong(4,itpc_id);
+            prepStmt = conn.prepareStatement(PrepStatements.INSERT_PICTURE,Statement.RETURN_GENERATED_KEYS);
+            prepStmt.setString(1, filePath);
+            prepStmt.setString(2, "");  //keyword list
+            prepStmt.setString(3, "");  //Description
+            prepStmt.setTimestamp(4,convertToDatabaseColumn(LocalDateTime.now()));
+            prepStmt.setString(5,"");   //Location
+            prepStmt.setDouble(6,generateRandomDouble(0,30));
+            prepStmt.setDouble(7,generateRandomDouble(0,30));
+            prepStmt.setDouble(8,generateRandomDouble(0,30));
+            prepStmt.setLong(9,new Random().nextInt(3)+1);
 
             long affectedRows = prepStmt.executeUpdate();
             if(affectedRows == 0){
@@ -236,52 +138,17 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
     }
 
     @Override
-    public void editPicturePath(PictureData pic) throws Exception {
-        File F = new File(pic.get_filepath());
-        if(F.exists()){
-            throw new Exception("Cannot rename File! There is an existing one with the same name!");
-        }
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-
-        File oldF = new File(getPicturePathByID(pic.getId()));
-        File newF = new File(pic.get_filepath());
-
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepUpdatePicturePath);
-            prepStmt.setString(1,pic.get_filepath());
-            prepStmt.setLong(2,pic.getId());
-            long affectedRows = prepStmt.executeUpdate();
-            if(affectedRows==0){
-                throw new SQLException("Editing Picture failed, no rows affected");
-            }else{
-                oldF.renameTo(newF);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(null,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    @Override
-    public long createPhotographer(PhotographerData ph) {
+    public long createAuthor(AuthorData a) {
         Connection conn=null;
         PreparedStatement prepStmt=null;
         long ret = -1;
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepInsertPhotographer, Statement.RETURN_GENERATED_KEYS);
-            prepStmt.setString(1,ph.get_name());
-            prepStmt.setString(2,ph.get_lastName());
-            prepStmt.setString(3,ph.get_address());
+            prepStmt = conn.prepareStatement(PrepStatements.INSERT_AUTHOR, Statement.RETURN_GENERATED_KEYS);
+            prepStmt.setString(1,a.get_name());
+            prepStmt.setString(2,a.get_lastName());
+            prepStmt.setDate(3, Date.valueOf(a.get_birthday()));
+            prepStmt.setString(4,a.get_notes());
             int affectedRows = prepStmt.executeUpdate();
 
             if(affectedRows == 0){
@@ -303,139 +170,55 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
     }
 
     @Override
-    public void editPhotographer(long id, PhotographerData ph) {
+    public void editPicture(PictureData pic) {
+        Connection conn = null;
+        PreparedStatement prepStmt=null;
+
+        try{
+            conn = DBCPDataSource.getConnection();
+            prepStmt = conn.prepareStatement(PrepStatements.UPDATE_PICTURE, Statement.RETURN_GENERATED_KEYS);
+            prepStmt.setString(1,pic.get_filepath());
+            prepStmt.setString(2,pic.get_keywords());
+            prepStmt.setString(3,pic.get_desc());
+            prepStmt.setTimestamp(4,convertToDatabaseColumn(pic.get_date()));
+            prepStmt.setString(5,pic.get_location());
+            prepStmt.setDouble(6,pic.get_focal());
+            prepStmt.setDouble(7,pic.get_exposure());
+            prepStmt.setDouble(8,pic.get_dazzle());
+            prepStmt.setLong(9,pic.get_fk_author());
+            prepStmt.setLong(10,pic.get_id());
+            int affectedRows = prepStmt.executeUpdate();
+
+            if(affectedRows == 0){
+                throw new SQLException("Editing Picture failed, no rows affected");
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            try {
+                closeConnection(null,prepStmt,conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void editAuthor(AuthorData a) {
         Connection conn=null;
         PreparedStatement prepStmt=null;
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepUpdatePhotographer);
-            prepStmt.setString(1,ph.get_name());
-            prepStmt.setString(2,ph.get_lastName());
-            prepStmt.setString(3,ph.get_address());
-            prepStmt.setLong(4,ph.get_id());
+            prepStmt = conn.prepareStatement(PrepStatements.UPDATE_AUTHOR);
+            prepStmt.setString(1,a.get_name());
+            prepStmt.setString(2,a.get_lastName());
+            prepStmt.setDate(3,Date.valueOf(a.get_birthday()));
+            prepStmt.setString(4,a.get_notes());
+            prepStmt.setLong(5,a.get_id());
             long affectedRows = prepStmt.executeUpdate();
             if(affectedRows==0){
                 throw new SQLException("Editing Photographer failed, no rows affected");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(null,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    @Override
-    public long createExifData(ExifData exif) {
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        long ret = -1;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepInsertEXIF, Statement.RETURN_GENERATED_KEYS);
-            prepStmt.setTimestamp(1,Timestamp.valueOf(exif.get_dateTime()));
-            prepStmt.setDouble(2,exif.get_focalLength());
-            prepStmt.setDouble(3,exif.get_exposureTime());
-            prepStmt.setDouble(4,exif.get_dazzleNumber());
-            int affectedRows = prepStmt.executeUpdate();
-
-            if(affectedRows == 0){
-                throw new SQLException("Creating Photographer failed, no rows affected");
-            }
-            ret = getGenKeys(prepStmt);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(null,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return ret;
-    }
-
-    @Override
-    public void editExifData(long id, ExifData exif) {
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepUpdateEXIF);
-            prepStmt.setTimestamp(1,Timestamp.valueOf(exif.get_dateTime()));
-            prepStmt.setDouble(2,exif.get_focalLength());
-            prepStmt.setDouble(3,exif.get_exposureTime());
-            prepStmt.setDouble(4,exif.get_dazzleNumber());
-            prepStmt.setLong(5,exif.get_id());
-            long affectedRows = prepStmt.executeUpdate();
-            if(affectedRows==0){
-                throw new SQLException("Editing EXIF failed, no rows affected");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(null,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    @Override
-    public long createItpcData(ItpcData itpc) {
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        long ret = -1;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepInsertITPC, Statement.RETURN_GENERATED_KEYS);
-            prepStmt.setString(1,itpc.get_pictureName());
-            prepStmt.setString(2,itpc.get_pictureExt());
-            prepStmt.setString(3,itpc.get_keywords());
-            int affectedRows = prepStmt.executeUpdate();
-
-            if(affectedRows == 0){
-                throw new SQLException("Creating Photographer failed, no rows affected");
-            }
-            ret = getGenKeys(prepStmt);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(prepStmt!=null) {
-                try {
-                    closeConnection(null,prepStmt,conn);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return ret;
-    }
-
-    @Override
-    public void editItpcData(long id, ItpcData itpc) {
-        Connection conn=null;
-        PreparedStatement prepStmt=null;
-        try {
-            conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepUpdateITPC);
-            prepStmt.setString(1,itpc.get_pictureName());
-            prepStmt.setString(2,itpc.get_pictureExt());
-            prepStmt.setString(3,itpc.get_keywords());
-            prepStmt.setLong(4,itpc.get_id());
-            long affectedRows = prepStmt.executeUpdate();
-            if(affectedRows==0){
-                throw new SQLException("Editing ITPC failed, no rows affected");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -458,11 +241,17 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         List<PictureData> resultList = new LinkedList<>();
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectAllPictures);
+            prepStmt = conn.prepareStatement(PrepStatements.GET_ALL_PICTURES);
             rs = prepStmt.executeQuery();
 
             while(rs.next()){
-                resultList.add(new PictureData(rs.getLong("ID"),rs.getString("FILEPATH"),rs.getLong("FK_PHOTOGRAPHER_ID"),rs.getLong("FK_EXIF_ID"),rs.getLong("FK_ITPC_ID")));
+                resultList.add(new PictureData(
+                        rs.getLong("ID"),rs.getString("FILEPATH"),rs.getString("KEYWORDS"),
+                        rs.getString("DESCRIPTION"),convertToEntityAttribute(rs.getTimestamp("DATE_CREATED")),
+                        rs.getString("LOCATION"),rs.getDouble("FOCAL_LENGTH"),rs.getDouble("EXPOSURE_TIME"),
+                        rs.getDouble("DAZZLE_TIME"),rs.getLong("FK_AUTHOR_ID")
+
+                ));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -480,6 +269,11 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
     }
 
     @Override
+    public List<PictureData> getAllPicturesParallel(){
+        return getAllPictures().parallelStream().filter(img->img.get_filepath().contains("")).collect(Collectors.toList());
+    }
+
+    @Override
     public Set<String> getPicturePathSet() {
         Set<String> result = new HashSet<>();
         Connection conn=null;
@@ -488,7 +282,7 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
 
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectPicturePaths);
+            prepStmt = conn.prepareStatement(PrepStatements.GET_ALL_PICTURES);
             rs = prepStmt.executeQuery();
 
             while(rs.next()){
@@ -510,19 +304,20 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
     }
 
     @Override
-    public String getPicturePathByID(long id) {
+    public AuthorData getAuthorByID(long id) {
         Connection conn=null;
         PreparedStatement prepStmt=null;
         ResultSet rs=null;
-        String path = null;
+        AuthorData author = null;
+
         try {
             conn = DBCPDataSource.getConnection();
-            prepStmt = conn.prepareStatement(PreparedStatements.prepSelectPictureByID);
+            prepStmt = conn.prepareStatement(PrepStatements.GET_AUTHOR_BY_ID);
             prepStmt.setLong(1,id);
             rs = prepStmt.executeQuery();
 
             while(rs.next()){
-                path = rs.getString("FILEPATH");
+                author = new AuthorData(id,rs.getString("NAME"),rs.getString("LASTNAME"),rs.getDate("BIRTHDAY").toLocalDate(),rs.getString("NOTES"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -535,22 +330,43 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
                 }
             }
         }
-        return path;
+
+        return author;
     }
 
     @Override
-    public List<PictureData> searchPhotographer(String name) {
-        return null;
+    public List<AuthorData> getAllAuthors() {
+        Connection conn=null;
+        PreparedStatement prepStmt=null;
+        ResultSet rs=null;
+        List<AuthorData> resultList = new LinkedList<>();
+        try {
+            conn = DBCPDataSource.getConnection();
+            prepStmt = conn.prepareStatement(PrepStatements.GET_ALL_AUTHORS);
+            rs = prepStmt.executeQuery();
+
+            while(rs.next()){
+                resultList.add(new AuthorData(rs.getLong("ID"),rs.getString("NAME"),rs.getString("LASTNAME"),rs.getDate("BIRTHDAY").toLocalDate(),rs.getString("NOTES")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if(prepStmt!=null) {
+                try {
+                    closeConnection(rs,prepStmt,conn);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return resultList;
     }
 
     @Override
-    public List<PictureData> searchExif(LocalDateTime datetime, double focalLength, double exposureTime, double dazzleNumber) {
-        return null;
-    }
-
-    @Override
-    public List<PictureData> searchItpc(String pictureName, String pictureExtension, String keyword) {
-        return null;
+    public List<PictureData> getPicturesByKeyword(String keyword){
+        //TODO: get_filePath mit getKeywords ersetzen
+        return getAllPictures().parallelStream().filter(img->img.get_keywords().toLowerCase().contains(keyword)).collect(Collectors.toList());
     }
 
     private long getGenKeys(PreparedStatement prepStmt) throws SQLException{
@@ -590,5 +406,15 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
             ps.close();
         if(conn!=null)
             conn.close();
+    }
+
+    public Timestamp convertToDatabaseColumn(LocalDateTime ldt) {
+        return Timestamp.valueOf(ldt);
+    }
+    public LocalDateTime convertToEntityAttribute(Timestamp ts) {
+        if(ts!=null){
+            return ts.toLocalDateTime();
+        }
+        return null;
     }
 }
