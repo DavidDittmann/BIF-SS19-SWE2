@@ -32,18 +32,13 @@
                       </Menu>
                       <Menu mnemonicParsing="false" text="Edit">
                         <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
+                          <MenuItem fx:id="reloadBtn" mnemonicParsing="false" text="Reload" />
                               <MenuItem fx:id="authorManager" mnemonicParsing="false" text="Manage Authors" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Help">
                         <items>
                           <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Reload">
-                        <items>
-                          <MenuItem fx:id="reloadBtn" mnemonicParsing="false" text="Reload" />
                         </items>
                       </Menu>
                     </menus>
@@ -79,7 +74,7 @@
                                                                   <VBox layoutX="41.0" prefHeight="219.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
                                                                         <Label text="Bildname" />
-                                                                        <TextField fx:id="picNameTF_ID" editable="false" />
+                                                                        <TextField fx:id="picNameTF_ID" />
                                                                         <Label text="Fileformat" />
                                                                         <TextField fx:id="picFormatTF_ID" editable="false" />
                                                                         <Label text="Fotograf" />
@@ -104,7 +99,7 @@
                                                                         <Label text="Datum / Uhrzeit" />
                                                                         <TextField fx:id="dateTimeTF_ID" editable="false" />
                                                                         <Label layoutX="10.0" layoutY="10.0" text="Ort" />
-                                                                        <TextField fx:id="locationTF_ID" layoutX="10.0" layoutY="27.0" />
+                                                                        <TextField fx:id="locationTF_ID" editable="false" layoutX="10.0" layoutY="27.0" />
                                                                         <Label text="Brennweite" />
                                                                         <TextField fx:id="focalLengthTF_ID" editable="false" />
                                                                         <Label text="Belichtungszeit" />
@@ -126,13 +121,9 @@
                               </SplitPane>
                            </children>
                         </AnchorPane>
-                      <AnchorPane fx:id="sp_anker" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <ScrollPane fx:id="galleryScrollPane" layoutX="100.0" layoutY="-48.0" prefHeight="121.0" prefWidth="726.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                                </content>
-                              </ScrollPane>
+                              <ScrollPane fx:id="galleryScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="115.0" layoutY="-46.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children></AnchorPane>
                     </items>
                   </SplitPane>

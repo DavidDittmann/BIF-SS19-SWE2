@@ -3,11 +3,9 @@ package Layers;
 //https://www.baeldung.com/java-connection-pooling
 //https://www.tutorialspoint.com/apache_derby/apache_derby_create_table.htm
 
-//TODO: IMPLEMENT SEARCH
-
 import DataModels.*;
+import Misc.ConfigManager;
 import Misc.PrepStatements;
-import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.sql.*;
@@ -17,10 +15,21 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Der DataAccessLayer ist die Schnittstelle der Applikation zum Filesystem
+ * Zuständig für alle Fileoperationen (Ausgenommen des ConfigManagers)
+ */
 public class DataAccessLayer implements DataAccessLayer_Interface{
+    private ConfigManager conf;
     public DataAccessLayer() {
+        conf = ConfigManager.getInstance();
     }
 
+
+    /**
+     * Funktion zum Generieren der Bilderdatenbank. Falls Datenbank bereits vorhanden, wird keine
+     * Aktion ausgeführt
+     */
     @Override
     public void generateDatabase() {
         if(!doesTableExist("AUTHORS")){
@@ -35,6 +44,12 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         }
     }
 
+
+    /**
+     * Methode zum checken, ob eine Tabelle bereits in der Datenbank vorhanden ist
+     * @param tablename (Type: String) Name der Tabelle, welche überprüft werden soll
+     * @return
+     */
     @Override
     public boolean doesTableExist(String tablename) {
         tablename = tablename.toLowerCase();
@@ -66,6 +81,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return false;
     }
 
+    /**
+     * Erstellen einer Tabelle in der Datenbank mit vorgegebenen Prepared Statement
+     * @param prepStmtStr (Type: String) Das Prepared Statement, mit dem die Tabelle erstellt wird
+     */
     @Override
     public void createTable(String prepStmtStr) {
         PreparedStatement prepStmt=null;
@@ -87,19 +106,34 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         }
     }
 
+    /**
+     * Checken des angegebenen Ordners (Configfile) in dem die Bilder liegen, ob
+     * es neue Bilder gibt, die nachgeladen werden müssen
+     */
     @Override
     public void updateDatabase() {
-        File folder = new File("img"); //TODO: config file
-        List<File> filelist = listFilesInFolder(folder);
-        Set<String> picturePathSet = getPicturePathSet();
+        File folder = null;
+        try {
+            folder = new File(conf.getImageBaseFolder());
+            List<File> filelist = listFilesInFolder(folder);
+            Set<String> picturePathSet = getPicturePathSet();
 
-        for(File f : filelist){
-            if(!picturePathSet.contains(f.getAbsolutePath())){
-                createPicture(f.getAbsolutePath());
+            for(File f : filelist){
+                if(!picturePathSet.contains(f.getAbsolutePath())){
+                    createPicture(f.getAbsolutePath());
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
+    /**
+     * Erstellen eines Bildeintrages in der Datenbank.
+     * ! Das Bild bekommt Pseudodaten, da echte Bilddaten (EXIF/ITPC) nicht ausgelesen werden können
+     * @param filePath (Type: String) Pfad zum Bild, welches geladen werden soll
+     * @return (Type: Long) ID des angelegten Tabelleneintrages
+     */
     @Override
     public long createPicture(String filePath) {
         Connection conn=null;
@@ -137,6 +171,11 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return ret;
     }
 
+    /**
+     * Erstellen eines Authors in der Datenbank
+     * @param a (Type: AuthorData) Die Daten des Authors, welcher abgespeichert werden soll
+     * @return (Type: Long) ID des Tabelleneintrags der erstellt wurde
+     */
     @Override
     public long createAuthor(AuthorData a) {
         Connection conn=null;
@@ -169,6 +208,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return ret;
     }
 
+    /**
+     * Datenbank Update eines bereits vorhandenen Bildereintrages
+     * @param pic (Type: PictureData) Daten des zu ändernden Bildes
+     */
     @Override
     public void editPicture(PictureData pic) {
         Connection conn = null;
@@ -204,6 +247,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         }
     }
 
+    /**
+     * Datenbank Update eines bereits vorhandenen Authoreneintrages
+     * @param a (Type: AuthorData) Daten des zu ändernden Authors
+     */
     @Override
     public void editAuthor(AuthorData a) {
         Connection conn=null;
@@ -233,6 +280,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         }
     }
 
+    /**
+     * Laden aller Bildereinträge aus der Datenbank
+     * @return (Type: List<PictureData>) Liste an BilderDaten
+     */
     @Override
     public List<PictureData> getAllPictures() {
         Connection conn=null;
@@ -268,11 +319,20 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return resultList;
     }
 
+    /**
+     * Laden aller Bilderdaten aus der Datenbank parallel (Suchbeschleunigung)
+     * @return (Type: List<PictureData>) Liste an gefundenen Bildeinträgen in der DB
+     */
     @Override
     public List<PictureData> getAllPicturesParallel(){
         return getAllPictures().parallelStream().filter(img->img.get_filepath().contains("")).collect(Collectors.toList());
     }
 
+    /**
+     * Laden der Dateipfade aller bekannten Bilder. Wird benötigt zum checken, ob neue Bilder
+     * im angegebenen Ordner (ConfigManager) vorhanden sind
+     * @return (Type: Set<String>) Set and bekannten Bildpfaden
+     */
     @Override
     public Set<String> getPicturePathSet() {
         Set<String> result = new HashSet<>();
@@ -303,6 +363,11 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return result;
     }
 
+    /**
+     * Authordaten holen, mit Angabe der dazugehörigen ID
+     * @param id (Type: Long) ID des Authoreintrages in der Datenbank
+     * @return (Type: AuthorData) Daten des gesuchten wenn vorhandenen Authors
+     */
     @Override
     public AuthorData getAuthorByID(long id) {
         Connection conn=null;
@@ -334,6 +399,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return author;
     }
 
+    /**
+     * Laden aller bekannten Authoren aus der Datenbank
+     * @return (Type: List<AuthorData>) List an bekannten Authoren
+     */
     @Override
     public List<AuthorData> getAllAuthors() {
         Connection conn=null;
@@ -363,12 +432,22 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return resultList;
     }
 
+    /**
+     * Laden aller Bilder mit bestimmten Keyword in der Keywordliste
+     * @param keyword (Type: String) Keyword, nach dem gesucht wird
+     * @return (Type: List<PictureData>) Liste an gefundenen Bildern mit enthaltenen Keyword
+     */
     @Override
     public List<PictureData> getPicturesByKeyword(String keyword){
-        //TODO: get_filePath mit getKeywords ersetzen
         return getAllPictures().parallelStream().filter(img->img.get_keywords().toLowerCase().contains(keyword)).collect(Collectors.toList());
     }
 
+    /**
+     * Laden der ID eines zuvor erstellten Eintrages in der Datenbank
+     * @param prepStmt Das zuvor ausgeführte Prepared Statement
+     * @return (Type: Long) Erstellte ID des Datensatzes
+     * @throws SQLException
+     */
     private long getGenKeys(PreparedStatement prepStmt) throws SQLException{
         long ret = -1;
         try (ResultSet generatedKeys = prepStmt.getGeneratedKeys()){
@@ -387,6 +466,11 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return min + (max - min) * rand.nextDouble();
     }
 
+    /**
+     * Auflistung aller Files (auch rekursiv) im angegeben Ordner (Bildersuche)
+     * @param rootFolder (Type: File) Basisordner, in dem gesucht werden soll
+     * @return (Type: List<File>) gefundene Files im angegebenen Ordner und Unterordnern
+     */
     private List<File> listFilesInFolder(File rootFolder) {
         List<File> fileList = new LinkedList<>();
         for (File fileEntry : rootFolder.listFiles()) {
@@ -399,6 +483,13 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
         return fileList;
     }
 
+    /**
+     * Schließen der atkiven angegeben Verbindungen zur Datenbank (Connection, PreparedStatement und Resultset)
+     * @param rs (Type: ResultSet)
+     * @param ps (Type: PreparedStatement)
+     * @param conn (Type: Connection)
+     * @throws SQLException
+     */
     private void closeConnection(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException{
         if(rs!=null)
             rs.close();

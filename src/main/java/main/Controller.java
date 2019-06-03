@@ -26,6 +26,10 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
+/**
+ *  Hauptcontroller der Applikation. Handled das Verhalten des Hauptfensters.
+ */
 public class Controller implements Initializable {
     private BusinessLayer BL;
     private P_Model_Picture MainPicture;
@@ -59,6 +63,13 @@ public class Controller implements Initializable {
 
     private boolean maybeNewAuthor = false;
 
+    /**
+     * Initialisierung der Hauptcontrollers der Applikation
+     * Laden des Businesslayers und implementierung zum Laden der Eventhandler
+     * für die Searchbar, den Menübutton "Reload" und den Menübutton AuthorManager
+     * @param url Standard-Initialisierungsparameter
+     * @param resourceBundle Standard-Initialisierungsparameter
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BL = new BusinessLayer();
@@ -104,14 +115,20 @@ public class Controller implements Initializable {
         });
     }
 
-    private void reloadData(){
+    /**
+     * Wraper zum Laden aller verfügbaren Bilder und Authoren aus der Datenbank
+     */
+    public void reloadData(){
         BL.reloadDatabase();
         loadAuthors();
         loadPictures(null);
         loadImagesGallery();
     }
 
-    private void applyBindings(){
+    /**
+     * Binden der Properties des gerade aktiven Bildes mit den Properties der UI
+     */
+    public void applyBindings(){
         picNameTF_ID.textProperty().bindBidirectional(MainPicture.fileNameProperty());
         picFormatTF_ID.textProperty().bindBidirectional(MainPicture.fileExtProperty());
         keywordsTA_ID.textProperty().bindBidirectional(MainPicture.keywordsProperty());
@@ -124,7 +141,11 @@ public class Controller implements Initializable {
         photographerCB_ID.valueProperty().bindBidirectional(MainPicture.authorProperty());
     }
 
-    private void unbindMainPicture(){
+    /**
+     * Unbinden der Properties des gerade aktiven Bildes von den Properties der UI
+     * Wird benötigt beim Wechsel des anzuzeigenden Bildes, damit die Daten nicht überschrieben werden
+     */
+    public void unbindMainPicture(){
         picNameTF_ID.textProperty().unbindBidirectional(MainPicture.fileNameProperty());
         picFormatTF_ID.textProperty().unbindBidirectional(MainPicture.fileExtProperty());
         keywordsTA_ID.textProperty().unbindBidirectional(MainPicture.keywordsProperty());
@@ -137,11 +158,21 @@ public class Controller implements Initializable {
         photographerCB_ID.valueProperty().unbindBidirectional(MainPicture.authorProperty());
     }
 
+    /**
+     * Auslösen des Speichervorgangs des aktuell angezeigten Bildes be idrücken des Speichern-Buttons
+     * @param mouseEvent Mouseevent (Clicked) auf welches reagiert wird
+     */
     public void mainSaveBtnClicked(MouseEvent mouseEvent) {
         if(BL.isValidPicture(MainPicture))
             BL.savePictureData(MainPicture);
     }
 
+    /**
+     * Laden der anzuzeigenden Bilder.
+     * @param keyword (Type: String) Wenn ein keyword angegeben wird, werden beim Laden nur Bilder
+     *                berücksichtigt, welche dieses Keyword als Ganzes oder als Teil in der Keywordliste haben
+     *                Wenn keyword = null oder "" --> Alle verfügbaren bilder werden geladen
+     */
     public void loadPictures(String keyword){
         if(keyword == null)
              Pictures = BL.getAllPictures();
@@ -152,7 +183,11 @@ public class Controller implements Initializable {
         }
     }
 
-    public void loadAuthors(){  //TODO: Eventuel prüfen ob alte weil sonst doppelt?
+    /**
+     * Laden der Authoren, welche in der Datenbank zur Verfügung stehen
+     * Setzen der Combobox auf den Author des gerade aktiven Bildes, falls schon geladen
+     */
+    public void loadAuthors(){
         if(MainPicture!=null)
             photographerCB_ID.valueProperty().unbindBidirectional(MainPicture.authorProperty());
         photographerCB_ID.getItems().clear();
@@ -177,7 +212,13 @@ public class Controller implements Initializable {
         maybeNewAuthor = false;
     }
 
-    private void changeMainPicture(P_Model_Picture pic){
+    /**
+     * Laden / Wechseln des anzuzeigenden Bildes. Beim Wechsel werden alle Daten des zuletzt aktive Bildes
+     * gespeichert falls die Validierung eine gültige Änderung ergibt.
+     * Wird auch beim erstmaligen Start aufgerufen (Check ob aktives Bild = null ist)
+     * @param pic (Type: P_Model_Picture) Das neue zu ladende Bild
+     */
+    public void changeMainPicture(P_Model_Picture pic){
         //save changed data
         if(MainPicture!=null){
             unbindMainPicture();
@@ -200,7 +241,11 @@ public class Controller implements Initializable {
         applyBindings();
     }
 
-    private void loadImagesGallery(){
+    /**
+     * Laden der Bildergallerie aus den verfügbaren Bildern. Jedes Bild bekommt ein setOnMouseClick
+     * Eventhandler, welcher den Wechsel des Bildes veranlasst
+     */
+    public void loadImagesGallery(){
         HBox box = new HBox();
         for(P_Model_Picture pic : Pictures){
             pic.getIv().fitHeightProperty().bind(galleryScrollPane.heightProperty());

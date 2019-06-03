@@ -16,6 +16,10 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
+/**
+ * AuthorenManager UI zum Bearbeiten / Neuanlegen eines Authors
+ */
 public class AuthorManager implements Initializable {
     boolean autoselect = false;
 
@@ -30,6 +34,13 @@ public class AuthorManager implements Initializable {
     private P_Model_Author activeAuthor;
 
 
+    /**
+     * Initialisierung der Controllers des AuthorManagers
+     * Laden des Businesslayers und implementierung zum Laden des Listeners
+     * für die Combobox (Speichern der Daten, falls Valide bei wechseln von einem Author zum nächsten)
+     * @param url Standard-Initialisierungsparameter
+     * @param resourceBundle Standard-Initialisierungsparameter
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BL = new BusinessLayer();
@@ -42,13 +53,16 @@ public class AuthorManager implements Initializable {
                 if(!autoselect){
                     unbind();
                     saveAuthor(activeAuthor);
-                    List<P_Model_Author> tmp = BL.getAllAuthors();    //TODO Debuging code entfernen
                     activeAuthor = (P_Model_Author) observableValue.getValue();
                     applyBindings();
                 }
             }
         });
     }
+
+    /**
+     * Binden der Properties des gerade aktiven Authors mit den Properties der UI
+     */
     private void applyBindings(){
         nameTF.textProperty().bindBidirectional(activeAuthor.nameProperty());
         lastNameTF.textProperty().bindBidirectional(activeAuthor.lastNameProperty());
@@ -56,6 +70,10 @@ public class AuthorManager implements Initializable {
         notesTA.textProperty().bindBidirectional(activeAuthor.notesProperty());
     }
 
+    /**
+     * Unbinden der Properties des gerade aktiven Authors von den Properties der UI
+     * Wird benötigt beim Wechsel des anzuzeigenden Auhtors, damit die Daten nicht überschrieben werden
+     */
     private void unbind(){
         nameTF.textProperty().unbindBidirectional(activeAuthor.nameProperty());
         lastNameTF.textProperty().unbindBidirectional(activeAuthor.lastNameProperty());
@@ -63,7 +81,10 @@ public class AuthorManager implements Initializable {
         notesTA.textProperty().unbindBidirectional(activeAuthor.notesProperty());
     }
 
-    public void loadAuthors(){  //TODO: Eventuel prüfen ob alte weil sonst doppelt?
+    /**
+     * Laden aller bekannten Authoren von der Datenbank und aktuallisierung der Combobox zur Auswahl
+     */
+    public void loadAuthors(){
         ObservableList<P_Model_Author> authors = FXCollections.observableArrayList();
         List<P_Model_Author> tmp = BL.getAllAuthors();
         authorCB.getItems().clear();
@@ -81,6 +102,10 @@ public class AuthorManager implements Initializable {
         authorCB.getItems().addAll(authors);
     }
 
+    /**
+     * Speichern von eventuell geänderten Authorendaten oder eines neuen Authors
+     * @param a (Type: P_Model_Author) Daten, welche gespeichert werden sollen
+     */
     public void saveAuthor(P_Model_Author a){
         if(BL.isValidAuthor(a)){
             boolean isNewAuthor;
@@ -96,6 +121,10 @@ public class AuthorManager implements Initializable {
         }
     }
 
+    /**
+     * Aufruf des Speicherns des aktiven Authors
+     * @param mouseEvent (Type: MouseEvent) Button wird geklickt
+     */
     public void saveBtnClicked(MouseEvent mouseEvent) {
         autoselect=true;
         saveAuthor(activeAuthor);

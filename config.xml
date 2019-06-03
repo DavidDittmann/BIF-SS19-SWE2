@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <DataBaseConnection>jdbc:derby:mydb;create=true</DataBaseConnection>
+    <ImageBase>img</ImageBase>
+    <StartWidth>1527.0</StartWidth>
+    <StartHeight>794.0</StartHeight>
+</configuration>

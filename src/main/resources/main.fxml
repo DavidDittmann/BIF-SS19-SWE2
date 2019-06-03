@@ -15,7 +15,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="549.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
@@ -33,7 +32,7 @@
                       </Menu>
                       <Menu mnemonicParsing="false" text="Edit">
                         <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
+                          <MenuItem fx:id="reloadBtn" mnemonicParsing="false" text="Reload" />
                               <MenuItem fx:id="authorManager" mnemonicParsing="false" text="Manage Authors" />
                         </items>
                       </Menu>
@@ -44,7 +43,7 @@
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <TextField fx:id="searchBar_ID" layoutX="21.0" layoutY="27.0" onInputMethodTextChanged="#searchInputChanged" prefHeight="25.0" prefWidth="547.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextField fx:id="searchBar_ID" layoutX="21.0" layoutY="27.0" prefHeight="25.0" prefWidth="547.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="242.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
@@ -124,18 +123,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="115.0" layoutY="-46.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <HBox fx:id="galleryBox_ID" prefHeight="75.0" prefWidth="583.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                                             </children></HBox>
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
+                              <ScrollPane fx:id="galleryScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="115.0" layoutY="-46.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children></AnchorPane>
                     </items>
                   </SplitPane>

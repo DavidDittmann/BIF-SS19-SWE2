@@ -42,8 +42,8 @@ public class PrepStatements {
             "WHERE ID=?";
 
     public static String UPDATE_AUTHOR =
-            "UPDATE AUTHORS SET" +
-            "NAME=?, LASTNAME=?, BIRTHDAY=?, NOTES=?" +
+            "UPDATE AUTHORS SET " +
+            "NAME=?, LASTNAME=?, BIRTHDAY=?, NOTES=? " +
             "WHERE ID=?";
 
     public static String GET_ALL_PICTURES  =
