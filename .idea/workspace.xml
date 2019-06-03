@@ -10,54 +10,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BIF_SS19_SWE2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_configuration2_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Misc/ConfigManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DataModels/P_Model_PictureTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Layers/BusinessLayerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Layers/DataAccessLayerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Misc/ConfigManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_beta_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BIF-SS19-SWE2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BIF-SS19-SWE2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/log/log1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c10.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c150.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c161.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c171.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c180.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c1a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c1b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c200.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c211.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c221.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c230.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c241.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c380.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c391.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c3a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c3b1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c400.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c411.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c421.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c490.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4a1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydb/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4c1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c4d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c4d1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mydb/service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BIF_SS19_SWE2/BIF_SS19_SWE2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/BusinessLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/AuthorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/AuthorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AuthorManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AuthorManager.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Layers/BusinessLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/BusinessLayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Layers/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/DBCPDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layers/DataAccessLayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Misc/PrepStatements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Misc/PrepStatements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/AuthorManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/AuthorManager$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/AuthorManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/AuthorManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BIF-SS19-SWE2.kotlin_module" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,6 +79,20 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DebuggerManager">
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
@@ -114,33 +136,42 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="227">
-                    <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#684#685#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+                <element signature="method#getAllPicturesParallel#0;class#DataAccessLayer#0" />
+                <element signature="method#getPicturePathSet#0;class#DataAccessLayer#0" />
+                <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
+                <element signature="method#closeConnection#0;class#DataAccessLayer#0" />
+                <element signature="method#convertToEntityAttribute#0;class#DataAccessLayer#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DataModels/P_Model_PictureTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -150,11 +181,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Misc/ConfigManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+            <state relative-caret-position="-793">
+              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2294#2295#0" expanded="true" />
@@ -171,6 +202,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Misc/ConfigManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -180,19 +241,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Layers/BusinessLayerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Layers/DataAccessLayerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="295">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -255,15 +310,15 @@
         <option value="$PROJECT_DIR$/src/test/java/Layers/BusinessLayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/AuthorManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/AuthorManager.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/Misc/ConfigManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Misc/ConfigManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -273,6 +328,33 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BIF-SS19-SWE2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BIF-SS19-SWE2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BIF-SS19-SWE2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BIF-SS19-SWE2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="javafx" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -393,11 +475,51 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Misc" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
+          <expand>
+            <path>
+              <item name="BIF-SS19-SWE2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="BIF-SS19-SWE2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="BIF-SS19-SWE2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="BIF-SS19-SWE2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="BIF-SS19-SWE2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="BIF-SS19-SWE2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="BIF-SS19-SWE2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Layers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -416,15 +538,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559572692023" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559576645667" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/SWE2-Java-Exam" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mydb" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.23448277" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -568,7 +690,7 @@
       <workItem from="1559326346339" duration="599000" />
       <workItem from="1559375881978" duration="28047000" />
       <workItem from="1559473700356" duration="19616000" />
-      <workItem from="1559560158159" duration="12482000" />
+      <workItem from="1559560158159" duration="16471000" />
     </task>
     <servers />
   </component>
@@ -578,7 +700,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118350000" />
+    <option name="totallyTimeSpent" value="122339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,14 +717,14 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20255864" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
+      <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29075804" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29075804" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -613,18 +735,18 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32917964" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.3281412" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3281412" />
       <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Maven" order="7" visible="true" weight="0.20895523" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
@@ -687,7 +809,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/ItpcData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DataModels/PhotographerData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Layers/BusinessLayer_Interface.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -954,33 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="259" column="70" selection-start-line="259" selection-start-column="70" selection-end-line="259" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="method#getAllPicturesParallel#0;class#DataAccessLayer#0" />
-            <element signature="method#getPicturePathSet#0;class#DataAccessLayer#0" />
-            <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
-            <element signature="method#closeConnection#0;class#DataAccessLayer#0" />
-            <element signature="method#convertToEntityAttribute#0;class#DataAccessLayer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Misc/PrepStatements.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1002,16 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/12/javafx-graphics-12-win.jar!/javafx/stage/Stage.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -1023,30 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1094,6 +1154,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/AuthorManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DataModels/P_Model_PictureTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1103,8 +1173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Misc/ConfigManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        <state relative-caret-position="-793">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2294#2295#0" expanded="true" />
@@ -1119,6 +1189,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d42868c-e917-48b0-8cd6-d6599ce4e024/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DataAccessLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="method#getAllPicturesParallel#0;class#DataAccessLayer#0" />
+            <element signature="method#getPicturePathSet#0;class#DataAccessLayer#0" />
+            <element signature="method#generateRandomDouble#0;class#DataAccessLayer#0" />
+            <element signature="method#closeConnection#0;class#DataAccessLayer#0" />
+            <element signature="method#convertToEntityAttribute#0;class#DataAccessLayer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Layers/DBCPDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -1129,7 +1253,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.23448277" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1141,7 +1266,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.23448277" />
               </list>
             </option>
           </splitter-proportions>
@@ -1177,7 +1302,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.23448277" />
               </list>
             </option>
           </splitter-proportions>
@@ -1189,12 +1314,20 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.23448277" />
               </list>
             </option>
           </splitter-proportions>
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="clean javafx:jlink" />
+    <option value="clean javafx:compile" />
+    <option value="clean jfx:jlink" />
+    <option value="clean jfx:run" />
+    <option value="clean javafx:run" />
   </component>
 </project>

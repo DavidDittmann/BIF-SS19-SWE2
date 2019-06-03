@@ -16,7 +16,8 @@ public class DBCPDataSource {
             {
                 conf = ConfigManager.getInstance();
                 BasicDataSource ds = new BasicDataSource();
-                ds.setUrl(conf.getConfDatabaseConn());
+                final String tmp = conf.getConfDatabaseConn();
+                ds.setUrl(tmp);
                 //ds.setUrl("jdbc:derby:mydb;create=true");   //TODO: load from configfile!
                 ds.setMinIdle(1);
                 ds.setMaxIdle(10);
