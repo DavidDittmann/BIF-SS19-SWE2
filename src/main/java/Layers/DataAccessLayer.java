@@ -6,6 +6,8 @@ package Layers;
 import DataModels.*;
 import Misc.ConfigManager;
 import Misc.PrepStatements;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.sql.*;
@@ -478,7 +480,8 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
             if (fileEntry.isDirectory()) {
                 fileList.addAll(listFilesInFolder(fileEntry));
             } else {
-                fileList.add(fileEntry);
+                if(FilenameUtils.isExtension(fileEntry.getAbsolutePath(),"jpg") || FilenameUtils.isExtension(fileEntry.getAbsolutePath(),"png"))
+                    fileList.add(fileEntry);
             }
         }
         return fileList;
