@@ -116,8 +116,7 @@ public class AuthorManager implements Initializable {
                 isNewAuthor=false;
             BL.saveAuthorData(a,isNewAuthor);
 
-            if(isNewAuthor)
-                loadAuthors();
+            loadAuthors();
         }
     }
 
@@ -130,5 +129,4 @@ public class AuthorManager implements Initializable {
         saveAuthor(activeAuthor);
         autoselect=false;
     }
-
 }

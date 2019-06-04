@@ -127,6 +127,16 @@ public class BusinessLayer {
     }
 
     /**
+     * Holen eines Authorendatensatzes mittels dessen ID (Nötig für das neu laden der Authorendaten
+     * der Bilder beim ändern der Daten der Authoren)
+     * @param ID (Type: Long) ID des Authors
+     * @return (Type: P_Model_Author)
+     */
+    public P_Model_Author getAuthorByID(long ID){
+        return new P_Model_Author(DAL.getAuthorByID(ID));
+    }
+
+    /**
      * Check ob die Daten eines Bildes valide sind (z.B.: Prüfen ob Stringlängen nicht zu groß für Tabelle)
      * @param pic (Type: P_Model_Picture) Das Bild das Überprüft wird
      * @return (Type: Boolean) True wenn Daten valide sind, sonst False

@@ -91,7 +91,7 @@ public class Controller implements Initializable {
                         @Override
                         public void handle(WindowEvent windowEvent) {
                             maybeNewAuthor = true;
-                            loadAuthors();
+                            reloadData();
                         }
                     });
 
@@ -201,6 +201,7 @@ public class Controller implements Initializable {
         photographerCB_ID.getItems().addAll(authors);
 
         if(maybeNewAuthor){
+            MainPicture.setAuthor(BL.getAuthorByID(MainPicture.getAuthor().getID()));
             photographerCB_ID.getSelectionModel().selectFirst();
             P_Model_Author t = (P_Model_Author) photographerCB_ID.getSelectionModel().getSelectedItem();
             while(!BL.isEqualAuthor(t,MainPicture.getAuthor())){
