@@ -3,6 +3,9 @@ package main;
 import DataModels.P_Model_Author;
 import DataModels.P_Model_Picture;
 import Layers.BusinessLayer;
+import Misc.Logging;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -62,6 +65,7 @@ public class Controller implements Initializable {
     @FXML private ScrollPane galleryScrollPane;
 
     private boolean maybeNewAuthor = false;
+    private boolean autochange = false;
 
     /**
      * Initialisierung der Hauptcontrollers der Applikation
@@ -74,6 +78,14 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BL = new BusinessLayer();
         reloadData();
+
+        photographerCB_ID.valueProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+                if(!autochange)
+                    Logging.LogInfo(this.getClass(),"Author changed >>> new author for picture ["+MainPicture.getFileName()+"]: <"+t1+">");
+            }
+        });
 
         authorManager.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -113,16 +125,20 @@ public class Controller implements Initializable {
             loadPictures(newvalue);
             loadImagesGallery();
         });
+
+        Logging.LogInfo(this.getClass(),"Controller initialised");
     }
 
     /**
      * Wraper zum Laden aller verfügbaren Bilder und Authoren aus der Datenbank
      */
     public void reloadData(){
+        Logging.LogDebug(this.getClass(),"Data reloading...");
         BL.reloadDatabase();
         loadAuthors();
         loadPictures(null);
         loadImagesGallery();
+        Logging.LogDebug(this.getClass(),"Data reloaded!");
     }
 
     /**
@@ -163,8 +179,11 @@ public class Controller implements Initializable {
      * @param mouseEvent Mouseevent (Clicked) auf welches reagiert wird
      */
     public void mainSaveBtnClicked(MouseEvent mouseEvent) {
-        if(BL.isValidPicture(MainPicture))
+        if(BL.isValidPicture(MainPicture)){
             BL.savePictureData(MainPicture);
+            Logging.LogDebug(this.getClass(),"Picture saved");
+        }
+
     }
 
     /**
@@ -174,10 +193,12 @@ public class Controller implements Initializable {
      *                Wenn keyword = null oder "" --> Alle verfügbaren bilder werden geladen
      */
     public void loadPictures(String keyword){
-        if(keyword == null)
+        if(keyword == null){
              Pictures = BL.getAllPictures();
-        else
+        }
+        else{
             Pictures = BL.getPicturesByKeyword(keyword);
+        }
         if(Pictures!=null && Pictures.size()!=0){
             changeMainPicture(Pictures.get(0));
         }
@@ -204,10 +225,13 @@ public class Controller implements Initializable {
             MainPicture.setAuthor(BL.getAuthorByID(MainPicture.getAuthor().getID()));
             photographerCB_ID.getSelectionModel().selectFirst();
             P_Model_Author t = (P_Model_Author) photographerCB_ID.getSelectionModel().getSelectedItem();
+            autochange=true;
             while(!BL.isEqualAuthor(t,MainPicture.getAuthor())){
                 photographerCB_ID.getSelectionModel().selectNext();
                 t = (P_Model_Author) photographerCB_ID.getSelectionModel().getSelectedItem();
             }
+            autochange=false;
+            Logging.LogDebug(this.getClass(),"Author found in CB");
             photographerCB_ID.valueProperty().bindBidirectional(MainPicture.authorProperty());
         }
         maybeNewAuthor = false;
@@ -235,10 +259,12 @@ public class Controller implements Initializable {
 
         photographerCB_ID.getSelectionModel().selectFirst();
         P_Model_Author tmp = (P_Model_Author) photographerCB_ID.getSelectionModel().getSelectedItem();
+        autochange=true;
         while(!BL.isEqualAuthor(tmp,MainPicture.getAuthor())){
             photographerCB_ID.getSelectionModel().selectNext();
             tmp = (P_Model_Author) photographerCB_ID.getSelectionModel().getSelectedItem();
         }
+        autochange=false;
         applyBindings();
     }
 

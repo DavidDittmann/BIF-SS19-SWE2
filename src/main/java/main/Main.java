@@ -1,8 +1,7 @@
 package main;
 
-import DataModels.PictureData;
-import Layers.DataAccessLayer;
 import Misc.ConfigManager;
+import Misc.Logging;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +16,7 @@ import java.util.List;
 
 public class Main extends Application {
 
+
     /**
      * Inititalisierung der Appliaktion. Start des Hauptcontrollers und UI
      * @param primaryStage
@@ -24,6 +24,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Logging.LogInfo(this.getClass(),"Application started");
         ConfigManager conf = ConfigManager.getInstance();
 
         Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
@@ -41,6 +42,7 @@ public class Main extends Application {
                 } catch (ConfigurationException e) {
                     e.printStackTrace();
                 }
+                Logging.LogInfo(this.getClass(),"Application closed normaly");
             }
         });
 

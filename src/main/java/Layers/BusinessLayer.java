@@ -4,6 +4,7 @@ import DataModels.AuthorData;
 import DataModels.P_Model_Author;
 import DataModels.P_Model_Picture;
 import DataModels.PictureData;
+import Misc.Logging;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -143,10 +144,15 @@ public class BusinessLayer {
      */
     public boolean isValidPicture(P_Model_Picture pic){
         AuthorData author = null;
+
+
+
         author = DAL.getAuthorByID(pic.getAuthor().getID());
         if(pic.getFilePath().length()<=255 && pic.getKeywords().length()<=300
-                && pic.getDescription().length()<=300 && pic.getLocation().length()<=100 && author!=null)
+                && pic.getDescription().length()<=300 && pic.getLocation().length()<=100 && author!=null){
             return true;
+        }
+        Logging.LogError(this.getClass(),"Picture invalid");
         return false;
     }
 
@@ -156,9 +162,14 @@ public class BusinessLayer {
      * @return (Type: Boolean) True wenn Daten valide sind, sonst False
      */
     public boolean isValidAuthor(P_Model_Author a){
-        if((!a.getName().equals("NEW") || !a.getLastName().equals("AUTHOR")) && a.getName().length()<=100 && a.getLastName().length()<=50 && a.getBirthday().isBefore(LocalDate.now()))
+        if(!(a.getName().equals("NEW") && a.getLastName().equals("AUTHOR")) && a.getName().length()<=100
+                && a.getLastName().length()<=50 && a.getBirthday().isBefore(LocalDate.now())){
             return true;
-        else
+        }
+        else{
+            Logging.LogError(this.getClass(),"Author invalid");
             return false;
+        }
+
     }
 }

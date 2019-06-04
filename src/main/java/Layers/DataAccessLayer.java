@@ -5,6 +5,7 @@ package Layers;
 
 import DataModels.*;
 import Misc.ConfigManager;
+import Misc.Logging;
 import Misc.PrepStatements;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -35,11 +36,10 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
     @Override
     public void generateDatabase() {
         if(!doesTableExist("AUTHORS")){
+            Logging.LogDebug(this.getClass(),"generating Database");
             createTable(PrepStatements.CREATE_TABLE_AUTHORS);
             LocalDate n = LocalDate.now();
-            createAuthor(new AuthorData("Max","Mustermann",n,"danke"));
-            createAuthor(new AuthorData("Roman","Freud",n,"deine"));
-            createAuthor(new AuthorData("Susanne","Jahn",n,"auch"));
+            createAuthor(new AuthorData("Unknown","User",n,"Notes..."));
         }
         if(!doesTableExist("PICTURES")){
             createTable(PrepStatements.CREATE_TABLE_PICTURES);
@@ -153,7 +153,7 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
             prepStmt.setDouble(6,generateRandomDouble(0,30));
             prepStmt.setDouble(7,generateRandomDouble(0,30));
             prepStmt.setDouble(8,generateRandomDouble(0,30));
-            prepStmt.setLong(9,new Random().nextInt(3)+1);
+            prepStmt.setLong(9,1);
 
             long affectedRows = prepStmt.executeUpdate();
             if(affectedRows == 0){

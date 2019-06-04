@@ -3,6 +3,7 @@ package main;
 import DataModels.AuthorData;
 import DataModels.P_Model_Author;
 import Layers.BusinessLayer;
+import Misc.Logging;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -111,6 +112,7 @@ public class AuthorManager implements Initializable {
             boolean isNewAuthor;
             if(a.getID()==0){
                 isNewAuthor=true;
+                Logging.LogInfo(this.getClass(),"New author added >>> "+a.getFullName());
             }
             else
                 isNewAuthor=false;

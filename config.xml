@@ -2,6 +2,6 @@
 <configuration>
     <DataBaseConnection>jdbc:derby:mydb;create=true</DataBaseConnection>
     <ImageBase>img</ImageBase>
-    <StartWidth>1717.0</StartWidth>
-    <StartHeight>997.0</StartHeight>
+    <StartWidth>1547.0</StartWidth>
+    <StartHeight>942.0</StartHeight>
 </configuration>

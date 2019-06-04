@@ -4,6 +4,7 @@ import org.apache.commons.configuration2.XMLConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+
 import java.util.NoSuchElementException;
 
 
@@ -24,8 +25,10 @@ public class ConfigManager {
             Configurations configs = new Configurations();
             builder = configs.xmlBuilder("config.xml");
             config = builder.getConfiguration();
+            Logging.LogInfo(this.getClass(),"Configuration loaded successfully");
         } catch (ConfigurationException cex) {
             cex.printStackTrace();
+            Logging.LogError(this.getClass(),"Configuration Failed >>> "+cex.toString());
         }
     }
 

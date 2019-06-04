@@ -74,7 +74,7 @@
                                                                   <VBox layoutX="41.0" prefHeight="219.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
                                                                         <Label text="Bildname" />
-                                                                        <TextField fx:id="picNameTF_ID" />
+                                                                        <TextField fx:id="picNameTF_ID" editable="false" />
                                                                         <Label text="Fileformat" />
                                                                         <TextField fx:id="picFormatTF_ID" editable="false" />
                                                                         <Label text="Fotograf" />
@@ -99,7 +99,7 @@
                                                                         <Label text="Datum / Uhrzeit" />
                                                                         <TextField fx:id="dateTimeTF_ID" editable="false" />
                                                                         <Label layoutX="10.0" layoutY="10.0" text="Ort" />
-                                                                        <TextField fx:id="locationTF_ID" editable="false" layoutX="10.0" layoutY="27.0" />
+                                                                        <TextField fx:id="locationTF_ID" layoutX="10.0" layoutY="27.0" />
                                                                         <Label text="Brennweite" />
                                                                         <TextField fx:id="focalLengthTF_ID" editable="false" />
                                                                         <Label text="Belichtungszeit" />
