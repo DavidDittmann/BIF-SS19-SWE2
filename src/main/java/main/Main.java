@@ -25,9 +25,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         ConfigManager conf = ConfigManager.getInstance();
-        DataAccessLayer dal = new DataAccessLayer();
-        dal.generateDatabase();
-        dal.updateDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
 

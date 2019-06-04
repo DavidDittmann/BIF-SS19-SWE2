@@ -144,7 +144,8 @@ public class BusinessLayer {
     public boolean isValidPicture(P_Model_Picture pic){
         AuthorData author = null;
         author = DAL.getAuthorByID(pic.getAuthor().getID());
-        if(pic.getFilePath().length()<=255 && pic.getKeywords().length()<=300 && pic.getDescription().length()<=300 && pic.getLocation().length()<=100 && author!=null)
+        if(pic.getFilePath().length()<=255 && pic.getKeywords().length()<=300
+                && pic.getDescription().length()<=300 && pic.getLocation().length()<=100 && author!=null)
             return true;
         return false;
     }

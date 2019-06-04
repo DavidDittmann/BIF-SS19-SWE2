@@ -112,6 +112,7 @@ public class DataAccessLayer implements DataAccessLayer_Interface{
      */
     @Override
     public void updateDatabase() {
+        generateDatabase();
         File folder = null;
         try {
             folder = new File(conf.getImageBaseFolder());

@@ -59,6 +59,10 @@ public class ConfigManager {
         return null;
     }
 
+    private void setPropertyString(String PropertyName, String str){
+        config.setProperty(PropertyName,str);
+    }
+
     private int getPropertyInt(String propertyName){
         try {
             return config.getInt(propertyName);
@@ -77,10 +81,6 @@ public class ConfigManager {
             e.printStackTrace();
         }
         return -1;
-    }
-
-    private void setPropertyString(String PropertyName, String str){
-        config.setProperty(PropertyName,str);
     }
 
     private void setPropertyDouble(String PropertyName, double i){
